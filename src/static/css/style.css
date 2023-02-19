@@ -1,0 +1,16 @@
+* {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+:root {
+  /* variables for colors */
+  --white: #ffffff;
+  --grey: rgb(75, 79, 81);
+  --blue: #2877cb;
+  --black-with-opacity: rgba(0, 0, 0, 0.2);
+}
+
+body {
+  scroll-behavior: smooth;
+  margin: 0px;
+}
