@@ -1,0 +1,27 @@
+.main-page {
+    position:absolute;
+    width:100%;
+    height: 100%;
+    background-color: #93BFCF;
+    display:flex;
+}
+.main-page-text {
+    width:50%;
+    height: 100%;
+    display: inline-block;
+}
+/*staviti banner sliku i text side by side? */
+.banner-image {
+    width:auto;
+    height: 50%;
+    display:inline-block;
+    padding:3%;
+}
+.main-page p {
+    font-size: 24pt;
+    padding-top: 50%;
+    margin-right: 2%;
+}
+#read-more {
+    
+}
