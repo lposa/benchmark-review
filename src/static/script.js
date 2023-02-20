@@ -1,5 +1,5 @@
 VanillaTilt.init(document.querySelector("#read-more"), {
-  max: 10,
+  max: 12,
   speed: 400,
   glare: true,
 });
@@ -9,18 +9,11 @@ VanillaTilt.init(document.querySelector(".banner-image"), {
   speed: 400,
   glare: true,
 });
-VanillaTilt.init(document.querySelector(".scnd-text"), {
-  max: 5,
-  speed: 400,
-  glare: false,
-});
-VanillaTilt.init(document.querySelector(".thrd-text"), {
-  max: 5,
-  speed: 400,
-  glare: false,
-});
-VanillaTilt.init(document.querySelector(".frth-text"), {
-  max: 5,
-  speed: 400,
-  glare: false,
-});
+VanillaTilt.init(
+  document.querySelectorAll(".text-inside-containers-on-main-page"),
+  {
+    max: 5,
+    speed: 400,
+    glare: false,
+  }
+);
