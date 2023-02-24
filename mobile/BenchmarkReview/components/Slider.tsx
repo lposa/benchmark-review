@@ -1,70 +1,53 @@
 import {ScrollView, Image, StyleSheet, View, Text} from 'react-native';
-import {Styles} from '../constants/styles';
 
 import {Dimensions} from 'react-native';
 
-const width = Dimensions.get('width').width;
+const width = Dimensions.get('window').width;
 
 const Slider = (): JSX.Element => {
   return (
-    <View>
-      <ScrollView horizontal={true} style={styles.scrollContainer}>
-        <View style={styles.itemContainer}>
-          <View style={styles.imageContainer}>
-            <Image
-              style={styles.image}
-              source={require('../images/GoW.jpeg')}
-            />
-          </View>
-          <View style={styles.itemDescription}>
-            <Text>Stars</Text>
-          </View>
+    <ScrollView horizontal={true} style={styles.scrollContainer}>
+      <View style={styles.itemContainer}>
+        <View style={styles.imageContainer}>
+          <Image style={styles.image} source={require('../images/GoW.jpeg')} />
         </View>
-        <View style={styles.itemContainer}>
-          <View style={styles.imageContainer}>
-            <Image
-              style={styles.image}
-              source={require('../images/GoW.jpeg')}
-            />
-          </View>
-          <View style={styles.itemDescription}>
-            <Text>Stars</Text>
-          </View>
+        <View style={styles.itemDescription}>
+          <Text>Review 10/10</Text>
         </View>
-        <View style={styles.itemContainer}>
-          <View style={styles.imageContainer}>
-            <Image
-              style={styles.image}
-              source={require('../images/GoW.jpeg')}
-            />
-          </View>
-          <View style={styles.itemDescription}>
-            <Text>Stars</Text>
-          </View>
+      </View>
+      <View style={styles.itemContainer}>
+        <View style={styles.imageContainer}>
+          <Image style={styles.image} source={require('../images/jedi.png')} />
         </View>
-        <View style={styles.itemContainer}>
-          <View style={styles.imageContainer}>
-            <Image
-              style={styles.image}
-              source={require('../images/GoW.jpeg')}
-            />
-          </View>
-          <View style={styles.itemDescription}>
-            <Text>Stars</Text>
-          </View>
+        <View style={styles.itemDescription}>
+          <Text>Review 10/10</Text>
         </View>
-      </ScrollView>
-    </View>
+      </View>
+      <View style={styles.itemContainer}>
+        <View style={styles.imageContainer}>
+          <Image style={styles.image} source={require('../images/er.jpg')} />
+        </View>
+        <View style={styles.itemDescription}>
+          <Text>Review 0/10</Text>
+        </View>
+      </View>
+      <View style={styles.itemContainer}>
+        <View style={styles.imageContainer}>
+          <Image style={styles.image} source={require('../images/GoW.jpeg')} />
+        </View>
+        <View style={styles.itemDescription}>
+          <Text>Review 10/10</Text>
+        </View>
+      </View>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
   scrollContainer: {
-    width: '100%',
-    backgroundColor: Styles.colors.mainBlue,
+    width: width,
   },
   itemContainer: {
-    flex: 1,
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
