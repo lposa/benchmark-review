@@ -1,0 +1,33 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/Jost-200-Thin.ttf",
+      "sha1": "701eca85246e75cba6a7448c78b0265d9ef3c15f"
+    },
+    {
+      "path": "assets/fonts/Jost-300-Light.ttf",
+      "sha1": "4363aee4e596b046dfd24d90b24dabd7edb2fa9c"
+    },
+    {
+      "path": "assets/fonts/Jost-400-Book.ttf",
+      "sha1": "c06857308df6ace16d8627b73583b166c5f1c6c7"
+    },
+    {
+      "path": "assets/fonts/Jost-500-Medium.ttf",
+      "sha1": "c5a64022d1a17519299bccad823090071cb2e5de"
+    },
+    {
+      "path": "assets/fonts/Jost-700-Bold.ttf",
+      "sha1": "985b6797d56368af75a68358178d451e88bd19fb"
+    },
+    {
+      "path": "assets/fonts/Jost-800-Heavy.ttf",
+      "sha1": "359cd0cd89722cfc6a3be3587ddbe5927d579284"
+    },
+    {
+      "path": "assets/fonts/Jost-900-Black.ttf",
+      "sha1": "711ef642d72d60b0d8801a04d9582960f500a1c7"
+    }
+  ]
+}

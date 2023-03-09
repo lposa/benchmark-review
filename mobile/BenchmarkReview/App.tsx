@@ -7,17 +7,32 @@
 
 import React from 'react';
 
-import {NavigationContainer} from '@react-navigation/native';
+import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import MainScreen from './screens/MainScreen';
 import MyProfile from './screens/MyProfile';
 import {Styles} from './constants/styles.js';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {TouchableOpacity, StyleSheet} from 'react-native';
+import GamePage from './screens/GamePage';
 
 const BottomTabs = createBottomTabNavigator();
+const Stack = createNativeStackNavigator();
 
-const AddButton = ({size}): JSX.Element => {
+interface IconProps {
+  size: number;
+}
+
+const MyTheme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    background: Styles.colors.white,
+  },
+};
+
+const AddButton: React.FC<IconProps> = ({size}) => {
   return (
     <TouchableOpacity style={styles.addButton}>
       <Icon name="plus" size={size} color={'white'} />
@@ -25,12 +40,11 @@ const AddButton = ({size}): JSX.Element => {
   );
 };
 
-function AuthenticatedStack() {
+function FirstScreen() {
   return (
     <BottomTabs.Navigator
       screenOptions={() => ({
         tabBarStyle: {
-          backgroundColor: Styles.colors.white,
           borderRadius: 50,
           width: '90%',
           position: 'absolute',
@@ -43,6 +57,7 @@ function AuthenticatedStack() {
           elevation: 10,
           shadowColor: Styles.colors.mainBlue,
           shadowRadius: 3.5,
+          backgroundColor: Styles.colors.darkBlue,
         },
         tabBarItemStyle: {marginBottom: 5},
         headerShown: false,
@@ -54,7 +69,8 @@ function AuthenticatedStack() {
         options={{
           title: 'Home',
           headerShown: false,
-          tabBarActiveTintColor: Styles.colors.darkBlue,
+          tabBarActiveTintColor: Styles.colors.white,
+
           tabBarIcon: ({color, size}) => (
             <Icon name="home" size={size} color={color} />
           ),
@@ -65,8 +81,8 @@ function AuthenticatedStack() {
         component={MainScreen}
         options={{
           headerShown: false,
+          tabBarActiveTintColor: Styles.colors.white,
 
-          tabBarActiveTintColor: Styles.colors.darkBlue,
           tabBarIcon: ({size}) => <AddButton size={size} />,
         }}
       />
@@ -76,7 +92,8 @@ function AuthenticatedStack() {
         options={{
           title: 'My profile',
           headerShown: false,
-          tabBarActiveTintColor: Styles.colors.darkBlue,
+          tabBarActiveTintColor: Styles.colors.white,
+
           tabBarIcon: ({color, size}) => (
             <Icon name="user" size={size} color={color} />
           ),
@@ -88,8 +105,24 @@ function AuthenticatedStack() {
 
 function Navigation() {
   return (
-    <NavigationContainer>
-      <AuthenticatedStack />
+    <NavigationContainer theme={MyTheme}>
+      <Stack.Navigator
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: Styles.colors.plum,
+          },
+        }}>
+        <Stack.Screen
+          name="FirstScreen"
+          component={FirstScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="GamePage"
+          component={GamePage}
+          options={{headerShown: false}}
+        />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
@@ -105,7 +138,7 @@ function App(): JSX.Element {
 const styles = StyleSheet.create({
   addButton: {
     position: 'absolute',
-    backgroundColor: Styles.colors.darkBlue,
+    backgroundColor: Styles.colors.mainBlue,
     borderRadius: 50,
     width: 60,
     height: 60,

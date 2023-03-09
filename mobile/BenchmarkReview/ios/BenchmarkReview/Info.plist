@@ -36,7 +36,7 @@
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -51,5 +51,15 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Jost-200-Thin.ttf</string>
+		<string>Jost-300-Light.ttf</string>
+		<string>Jost-400-Book.ttf</string>
+		<string>Jost-500-Medium.ttf</string>
+		<string>Jost-700-Bold.ttf</string>
+		<string>Jost-800-Heavy.ttf</string>
+		<string>Jost-900-Black.ttf</string>
+	</array>
 </dict>
 </plist>
